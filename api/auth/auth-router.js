@@ -49,7 +49,7 @@ router.post('/register', checkPasswordLength, checkUsernameExists, (req, res, ne
  */
   router.post('/login', checkUsernameExists, (req, res, next) => {
     res.json('login')
-
+  })
 /**
   3 [GET] /api/auth/logout
 
@@ -67,6 +67,6 @@ router.post('/register', checkPasswordLength, checkUsernameExists, (req, res, ne
  */
   router.post('/logout', (req, res, next) => {
     res.json('logout')
- 
+  })
 // Don't forget to add the router to the `exports` object so it can be required in other modules
 module.exports = router
