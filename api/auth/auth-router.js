@@ -62,7 +62,7 @@ router.post('/register', checkPasswordLength, checkUsernameFree, (req, res, next
       req.session.user = req.user
       res.json({ message: `Welcome ${req.user.username}`})
     }else {
-      next ({ status: 401, message: 'invalid'})
+      next ({ status: 401, message: 'invalid credentials'})
     }
   })
 /**
@@ -86,11 +86,11 @@ router.post('/register', checkPasswordLength, checkUsernameFree, (req, res, next
         if (err) {
           next(err)
         } else {
-          res.json({ message: "logged out" })
+          res.json({ message: 'logged out' })
         }
       })
     } else {
-      res.json({ message: ' no session '})
+      res.json({ message: 'no session' })
     }
   })
 // Don't forget to add the router to the `exports` object so it can be required in other modules
