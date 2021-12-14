@@ -62,7 +62,7 @@ router.post('/register', checkPasswordLength, checkUsernameFree, (req, res, next
       req.session.user = req.user
       res.json({ message: `Welcome ${req.user.username}`})
     }else {
-      next ({ status: 401, message: 'invalid credentials'})
+      next ({ status: 401, message: 'Invalid credentials'})
     }
   })
 /**
